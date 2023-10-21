@@ -1,1 +1,1 @@
-Took me 5 hours to make.
+finally secured my internship lol i can actually work on projects i want to :))
