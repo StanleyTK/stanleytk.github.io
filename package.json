@@ -1,6 +1,5 @@
 {
-  "name": "stanleytk.github.io",
-  "homepage": "https://stanleytk.github.io/",
+  "name": "stanley_personal_portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
