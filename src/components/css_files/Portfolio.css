@@ -1,0 +1,157 @@
+/* Intro.css */
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: #222;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+.navbar a:hover {
+  color: #00aaff; /* Change text color on hover */
+}
+
+/* Profile section styles */
+.section_pic-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.circular-img {
+  width: 300px;
+  height: 370px;
+  border-radius: 50%;
+  object-fit: cover; /* Maintain aspect ratio */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.name-description {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.name {
+  font-size: 50px;
+  margin: 10px 0;
+  color: #fff; /* Adjust text color */
+}
+
+
+
+/* About section styles */
+.aboutme {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 10px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a more pronounced shadow */
+}
+
+.aboutme:hover {
+  background-color: #222;
+}
+
+.about {
+  font-size: 24px;
+}
+
+/* Description section styles */
+.description {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.description-text {
+  font-size: 18px;
+  line-height: 1.5; /* Increase line height for readability */
+  color: #ffffff; /* Adjust text color */
+}
+
+/* Project section styles */
+.experience-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Create 3 equal columns */
+  gap: 20px; /* Add some space between project items */
+  list-style-type: none;
+  padding: 0;
+  margin: 20px;
+  justify-content: center; /* Center the grid horizontally */
+}
+
+
+/* Project section styles */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+  gap: 20px; /* Add some space between project items */
+  list-style-type: none;
+  padding: 0;
+  margin: 20px;
+  justify-content: center; /* Center the grid horizontally */
+}
+
+.project-item {
+  border: 2px solid #e6e6e6;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: lightblue;
+  text-align: center; /* Center the project item content */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: background-color 0.3s ease;
+
+}
+.project-item:hover {
+  background-color: lightskyblue;
+}
+
+.project-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Adjust text color */
+}
+
+.project-description {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #222; /* Adjust text color */
+}
+
+.project-skills {
+  font-size: 14px;
+  color: #888;
+}
+
+.project-image {
+  width: 100%; /* Adjust the width as needed */
+  max-height: 250px; /* Set a maximum height to maintain aspect ratio */
+  object-fit: contain; /* Use "cover" to fill the container while maintaining aspect ratio */
+  border-radius: 10px; /* Add rounded corners to the photos */
+  margin: 20px 0; /* Add some spacing between the image and description */
+}
+
+

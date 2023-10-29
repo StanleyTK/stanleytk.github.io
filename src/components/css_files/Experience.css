@@ -1,0 +1,111 @@
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar:hover {
+    background-color: #222;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+  }
+  
+  .navbar li {
+    margin: 0 20px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Smooth text color transition */
+  }
+  
+  .navbar a:hover {
+    color: #00aaff; /* Change text color on hover */
+  }
+  
+  /* Profile section styles */
+  .section_pic-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .circular-img {
+    width: 300px;
+    height: 370px;
+    border-radius: 50%;
+    object-fit: cover; /* Maintain aspect ratio */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+  
+  .name-description {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .name {
+    font-size: 50px;
+    margin: 10px 0;
+    color: #fff; /* Adjust text color */
+  }
+  /* Experience section styles */
+.experience-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  margin: 10px; /* Reduced margin for a more compact look */
+  padding: 10px; /* Reduced padding for a more compact look */
+  border: 2px solid #e6e6e6;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.experience-item:hover {
+  background-color: #e0e0e0;
+}
+
+.experience-image {
+  width: 150px; /* Set a fixed width for square images */
+  height: 150px; /* Set a fixed height for square images */
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.experience-details {
+  flex: 1;
+}
+
+.experience-title {
+  font-size: 20px; /* Slightly smaller font size for the title */
+  font-weight: bold;
+  color: #333;
+}
+
+.experience-description {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #222;
+}
+
+.experience-location {
+  font-size: 14px;
+  color: #888;
+}
+
+.experience-skills {
+  font-size: 14px;
+  color: #888;
+}

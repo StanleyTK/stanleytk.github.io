@@ -1,0 +1,23 @@
+[
+    {
+      "name": "Sales Forecasting Model (Python, TensorFlow)",
+      "description": "Led a team in the TE AI Cup Competition, achieving a high accuracy rate in predicting 18-month sales forecasts using 500 external indicators, demonstrating strong data modeling and machine learning skills.",
+      "skills": "Python, TensorFlow"
+    },
+    {
+      "name": "WalkMeHome (Flutter, CockroachDB)",
+      "description": "Designed and developed a real-time mobile application for BoilerMake Hackathon, enabling precise geolocation services for seamless user movement visualization on a map. Integrated CockroachDB backend with Flutter frontend for optimal performance.",
+      "skills": "Flutter, CockroachDB"
+    },
+    {
+      "name": "Purdue X NASA Lunabotics (Python, C++)",
+      "description": "Developed a Python program to implement the FastSLAM algorithm, allowing a lunar rover to efficiently map and localize itself in a simulated lunar environment. This enabled accurate mapping and position updates across complex lunar terrain.",
+      "skills": "Python, C++"
+    },
+    {
+      "name": "Path-finding Algorithm Visualizer (JavaScript, HTML)",
+      "description": "Created a website for visualizing maze-solving using A* Search Algorithm and Dijkstra’s Algorithm. Ensured the shortest path between start and end nodes, receiving positive feedback from users for its educational value.",
+      "skills": "JavaScript, HTML"
+    }
+  ]
+  

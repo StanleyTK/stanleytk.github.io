@@ -13,16 +13,26 @@
   }
 }
 
+/* In your global CSS file, e.g., App.css or styles.css */
 .App-header {
-  background-color: #282c34;
+  background-color: #ff0000; /* Red background color */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black; /* Text color */
 }
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	height: 100vh;
+}
+
+
+
 
 .App-link {
   color: #61dafb;
