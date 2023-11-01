@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f4a39ca5.css",
+    "main.js": "/static/js/main.f14a71fa.js",
+    "static/js/787.0e0919c6.chunk.js": "/static/js/787.0e0919c6.chunk.js",
+    "static/media/pfp_myself.jpg": "/static/media/pfp_myself.ec56e2c5314fa4ff95bc.jpg",
+    "static/media/symposium.png": "/static/media/symposium.e59c1afb5ddd8f1b3566.png",
+    "static/media/Portfolio.png": "/static/media/Portfolio.2651f03f3ecdabfb53d2.png",
+    "static/media/Visualizer2.jpg": "/static/media/Visualizer2.7908dd21f06b55414461.jpg",
+    "static/media/WalkMeHome.jpg": "/static/media/WalkMeHome.befaf7c031ab5da58742.jpg",
+    "static/media/purdue-banner-logo.jpg": "/static/media/purdue-banner-logo.18c836c9f72a1f8d6988.jpg",
+    "static/media/Comerica_Logo.jpg": "/static/media/Comerica_Logo.bc75af4a5c82231a17fb.jpg",
+    "static/media/kohls-logo.jpg": "/static/media/kohls-logo.5cbbfb35accca1500a8a.jpg",
+    "static/media/Lunabotics.png": "/static/media/Lunabotics.cd37f3462fda1eaa44c5.png",
+    "static/media/TE_AI_CUP_Photo.jpg": "/static/media/TE_AI_CUP_Photo.3e403ffdd60821830e9a.jpg",
+    "index.html": "/index.html",
+    "main.f4a39ca5.css.map": "/static/css/main.f4a39ca5.css.map",
+    "main.f14a71fa.js.map": "/static/js/main.f14a71fa.js.map",
+    "787.0e0919c6.chunk.js.map": "/static/js/787.0e0919c6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f4a39ca5.css",
+    "static/js/main.f14a71fa.js"
+  ]
+}
