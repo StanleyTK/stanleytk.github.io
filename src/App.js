@@ -16,7 +16,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Portfolio />} />
           <Route path="/experience" element={<Experience />} />
-          <Route path="/pathfinding" element={<Pathfinding />} />
           <Route path="/sudoku" element={<Sudoku />} />
           <Route path="/contact" element={<Contact />} />
 
