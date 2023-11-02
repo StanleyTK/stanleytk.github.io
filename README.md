@@ -1,1 +1,1 @@
-plz why is githuh pages showing the readme file??????
+yes, the website sucks. not mobile frienldy. but ill make it better soon
