@@ -79,50 +79,29 @@ const info = {
     "technologyUsed": "React, TypeScript, Tailwind CSS, Python, Django, Firebase, MySQL, AWS"
   },
 
-  /* 2 ──────────────────────────────── */
   {
-    "title": "PokerAI",
-    "description": "Reinforcement-learning poker AI that learns optimal betting strategies (Work in progress).",
-    "technologies": "https://skillicons.dev/icons?i=python,cpp,pytorch,tensorflow&perline=6&theme=dark&size=32",
-    "technologyUsed": "Python, C++, PyTorch, TensorFlow, NumPy, Scikit-learn"
+    "title": "BluMap",
+    "description": "Developed a travel planning web application.",
+    "technologies": "https://skillicons.dev/icons?i=react,nextjs,nodejs,express,postgresql&perline=6&theme=dark&size=32",
+    "github": "https://github.com/StanleyTK/BluMap",
+    "technologyUsed": "React, NextJS, NodeJS, Express, PostgreSQL"
   },
-  
 
-  /* 3 ──────────────────────────────── */
   {
     "title": "StockPulse",
-    "description": "Developed a stock-market simulation game with trading and leaderboards.",
+    "description": "Developed a stock-market simulation game.",
     "technologies": "https://skillicons.dev/icons?i=react,nextjs,java,spring,mysql&perline=6&theme=dark&size=32",
     "github": "https://github.com/StanleyTK/stockpulse",
     "technologyUsed": "React, NextJS, Java, Spring Boot, MySQL"
   },
 
-  /* 4 ──────────────────────────────── */
   {
     "title": "Healthcare Surgery Volume Forecasting",
     "description": "Forecasting emergency-surgery volumes and helping IU Health ensure smoother patient care.",
     "technologies": "https://skillicons.dev/icons?i=python,postgresql,tensorflow&perline=6&theme=dark&size=32",
     "technologyUsed": "Python, SQL, Data Visualization"
   },
-  
-  /* 5 ──────────────────────────────── */
-  {
-    "title": "SmartPlanner",
-    "description": "Personal task-management app.",
-    "technologies": "https://skillicons.dev/icons?i=python,django,postgres,react,docker&perline=6&theme=dark&size=32",
-    "github": "https://github.com/StanleyTK/smartplanner",
-    "technologyUsed": "Python, Django, PostgreSQL, Docker, React, NextJS, TailwindCSS"
-  },
 
-  /* 6 ──────────────────────────────── */
-  {
-    "title": "MyChessEngine",
-    "description": "Chess engine with autonomous play via Minimax and alpha-beta pruning.",
-    "technologies": "https://skillicons.dev/icons?i=java&perline=6&theme=dark&size=32",
-    "github": "https://github.com/StanleyTK/MyChessEngine",
-    "link": "https://drive.google.com/drive/folders/1g6TVNaikgLV6VBmlKgQzC5npMR0Qj6xv",
-    "technologyUsed": "Java, Maven"
-  }
 ],
 
       "education": [
