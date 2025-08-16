@@ -161,16 +161,16 @@ const info = {
   },
 
   /* 4 ───────── Comerica Bank ─────────────────────── */
-  {
-    "company": "Comerica Bank",
-    "role": "Technology Intern",
-    "year": "May 2023 – August 2023",
-    "location": "Auburn Hills, MI",
-    "image": "comerica.png",
-    "description": "I spent the summer of 2023 on Comerica Bank’s Identity & Access Management team, building Java Spring-Boot microservices that integrated with SailPoint IdentityIQ. The services automated onboarding and off-boarding for more than 75 applications, saving ~10 engineer-hours per month. I also implemented lifecycle triggers to keep user attributes and roles synchronized for 5,000 + employees via high-volume MySQL queries, ensuring accurate and timely access across HR and IT systems.",
-    "technologies": "https://skillicons.dev/icons?i=java,spring,mysql&perline=6&theme=dark",
-    "technologyUsed": "Java, Spring Boot, MySQL, SailPoint IdentityIQ"
-  },
+  // {
+  //   "company": "Comerica Bank",
+  //   "role": "Technology Intern",
+  //   "year": "May 2023 – August 2023",
+  //   "location": "Auburn Hills, MI",
+  //   "image": "comerica.png",
+  //   "description": "I spent the summer of 2023 on Comerica Bank’s Identity & Access Management team, building Java Spring-Boot microservices that integrated with SailPoint IdentityIQ. The services automated onboarding and off-boarding for more than 75 applications, saving ~10 engineer-hours per month. I also implemented lifecycle triggers to keep user attributes and roles synchronized for 5,000 + employees via high-volume MySQL queries, ensuring accurate and timely access across HR and IT systems.",
+  //   "technologies": "https://skillicons.dev/icons?i=java,spring,mysql&perline=6&theme=dark",
+  //   "technologyUsed": "Java, Spring Boot, MySQL, SailPoint IdentityIQ"
+  // },
 
   // /* 5 ───────── Data Mine @ Purdue (IU Health) ────── */
   // {

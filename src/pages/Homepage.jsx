@@ -95,7 +95,7 @@ function Homepage() {
               <ExperienceCard key={job.company + job.title} {...job} />
             ))}
           </div>
-                <div className="flex justify-start mt-12">
+            {/* <div className="flex justify-start mt-12">
                 <a
               href="public/Resume_StanleyKim.pdf"
               download
@@ -103,7 +103,7 @@ function Homepage() {
             >
               Download Resume
             </a>
-          </div>
+          </div> */}
         </section>
 
         {/* ───────── Skills ───────── */}
