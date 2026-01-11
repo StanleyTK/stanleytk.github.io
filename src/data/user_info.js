@@ -141,7 +141,7 @@ const info = {
   {
     "company": "Amazon Web Services",
     "role": "Software Development Engineer Intern",
-    "year": "May 2024 – August 2024",
+    "year": "May 2025 – August 2025",
     "location": "Boston, MA",
     "image": "aws.png",
     "description": "I interned with the Amazon FSx Control Plane team responsible for the console frontend, public-facing APIs, regional expansion initiatives, and monitoring and tooling used to manage Amazon FSx services across AWS. I improved Amazon FSx Console user experience by enhancing search and filtering functionality, and refactored 50%+ of console test cases to remove legacy dependencies and support the upgrade to React 18+.",
