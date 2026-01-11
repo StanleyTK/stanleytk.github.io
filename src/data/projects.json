@@ -1,0 +1,104 @@
+[
+  {
+    "year": "2026",
+    "title": "ETF Signal Service",
+    "madeAt": "Personal",
+    "builtWith": ["Java", "AWS", "Python", "Jupyter"],
+    "link": null,
+    "github": "https://github.com/StanleyTK/etf-signal-service",
+    "summary": "Personal service that sends daily email reports with buy signals for long-term investing based on technical indicators.",
+    "featured": true
+  },
+  {
+    "year": "2025",
+    "title": "TikTalk",
+    "madeAt": "Hackathon",
+    "builtWith": ["React", "TypeScript", "Flask", "Kafka", "OpenAI", "Google Cloud"],
+    "link": null,
+    "github": "https://github.com/StanleyTK/TikTalk",
+    "summary": "Full-stack web application that generates TikTok-styled educational videos after processing lecture videos or PDF notes.",
+    "featured": true
+  },
+  {
+    "year": "2025",
+    "title": "Reactify",
+    "madeAt": "Hackathon",
+    "builtWith": ["React", "JavaScript", "Flask", "Auth0", "AWS", "OpenAI", "Google Cloud"],
+    "link": null,
+    "github": "https://github.com/SavitTumuluri/Reactify",
+    "summary": "Full-stack application that exports canvas designs as React components."
+  },
+  {
+    "year": "2025",
+    "title": "BoilerMarket",
+    "madeAt": "Purdue",
+    "builtWith": ["React", "TypeScript", "Django", "Firebase", "MySQL", "AWS"],
+    "link": "https://github.com/StanleyTK/BoilerMarket-Client",
+    "github": "https://github.com/StanleyTK/BoilerMarket-Client",
+    "summary": "Full-stack marketplace application for Purdue students."
+  },
+  {
+    "year": "2025",
+    "title": "Portfolio",
+    "madeAt": "Personal",
+    "builtWith": ["React"],
+    "link": "https://stanleytk.github.io/Portfolio/",
+    "github": "https://github.com/StanleyTK/Portfolio",
+    "summary": "Personal portfolio website showcasing projects, blogs, and experience with a modern design."
+  },
+  {
+    "year": "2024",
+    "title": "BluMap",
+    "madeAt": "Purdue",
+    "builtWith": ["React", "Next.js", "Node.js", "Express", "PostgreSQL"],
+    "link": "https://github.com/StanleyTK/BluMap",
+    "github": "https://github.com/StanleyTK/BluMap",
+    "summary": "Full-stack travel planning web application for organizing and sharing trip itineraries."
+  },
+  {
+    "year": "2024",
+    "title": "MyChessEngine",
+    "madeAt": "Personal",
+    "builtWith": ["Java"],
+    "link": null,
+    "github": "https://github.com/StanleyTK/MyChessEngine",
+    "summary": "Chess game application where players can play against AI using MinMax algorithm with alpha-beta pruning."
+  },
+  {
+    "year": "2024",
+    "title": "MyShell",
+    "madeAt": "Purdue",
+    "builtWith": ["C++"],
+    "link": null,
+    "github": null,
+    "summary": "Custom shell implementation using YACC, LEX, and C++ that replicates UNIX shell functionality including piping, redirection, and background processes."
+  },
+  {
+    "year": "2024",
+    "title": "Portable Oxygen Concentrator (POC) Analysis",
+    "madeAt": "Inogen",
+    "builtWith": ["Python", "SQL", "TensorFlow", "MATLAB"],
+    "link": null,
+    "github": null,
+    "summary": "Data analysis project using random forest and multivariate LSTM models to predict oxygen concentrator failure rate."
+  },
+  {
+    "year": "2023",
+    "title": "Healthcare Surgery Volume Forecasting",
+    "madeAt": "IU Health",
+    "builtWith": ["Python", "SQL"],
+    "link": null,
+    "github": null,
+    "summary": "Forecasting application for emergency-surgery volumes to help IU Health ensure smoother patient care operations."
+  },
+  {
+    "year": "2022",
+    "title": "Integration Testing for Point of Sale System",
+    "madeAt": "Quantic",
+    "builtWith": ["Python", "Selenium"],
+    "link": null,
+    "github": null,
+    "summary": "High school internship project focused on integration testing of frontend website for point of sale system."
+  }
+]
+

@@ -1,35 +1,48 @@
 import React from "react";
 
-function ExperienceCard({ image, role, company, year, description, location, technologies, technologyUsed }) {
+function ExperienceCard({ image, role, company, year, description, location, technologies, technologyUsed, index }) {
   const descriptionPoints = description.split('\n');
   const technologyUsedList = technologyUsed.split(',');
 
   return (
-    <div className="bg-white dark:bg-[#0e182c] hover:bg-gray-100 dark:hover:bg-[#1a2d4e] transition-all duration-300 p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 font-sans">
-      <div className="flex flex-col sm:flex-row justify-between items-start">
-        <div className="flex items-center gap-4 mb-4 sm:mb-0">
-          <img src={image} alt={company} className="h-16 w-16 rounded-full border border-gray-300 dark:border-gray-700" />
-          <div>
-            <h5 className="text-lg font-bold text-gray-900 dark:text-gray-100">{role}</h5>
-            <p className="text-sm text-gray-600 dark:text-gray-400">{company}</p>
-            <p className="text-sm text-gray-500 dark:text-gray-300">{year}</p>
-            <p className="text-sm text-gray-500 dark:text-gray-300">{location}</p>
-          </div>
+    <div className="relative pl-8 pb-8 border-l-2 border-[#233554] hover:border-[#64ffda] transition-colors group">
+      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#0a192f] border-2 border-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      
+      <div className="mb-2">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="text-sm text-[#64ffda] font-mono">{year.split(' – ')[0]}</span>
+          {year.includes('–') && (
+            <>
+              <span className="text-[#64ffda]">—</span>
+              <span className="text-sm text-[#64ffda] font-mono">{year.split(' – ')[1]}</span>
+            </>
+          )}
         </div>
-        <div className="mt-4 sm:mt-0 sm:ml-4">
-          <img src={technologies} alt="Technologies" className="h-12 w-auto" />
-        </div>
+        <h3 className="text-xl font-semibold text-[#ccd6f6] mb-1">
+          {role} · {company}
+        </h3>
+        <p className="text-sm text-[#8892b0] mb-4">{location}</p>
       </div>
-      <ul className="mt-4 text-gray-700 dark:text-gray-300 list-disc list-inside space-y-2">
-        {descriptionPoints.map((point, index) => (
-          <li key={index} className="flex">
-            <span className="flex-grow pl-2">{point.trim()}</span>
-          </li>
+      
+      <div className="text-[#8892b0] mb-4">
+        {descriptionPoints.map((point, idx) => (
+          <p key={idx} className="mb-3 leading-relaxed">
+            {point.trim()}
+          </p>
         ))}
-      </ul>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {technologyUsedList.map((tech, index) => (
-          <span key={index} className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium transition-colors duration-300 hover:bg-blue-600 hover:text-white">
+      </div>
+      
+      <div className="flex flex-wrap gap-2">
+        {technologyUsedList.map((tech, idx) => (
+          <span
+            key={idx}
+            className="px-2 py-1 rounded text-xs"
+            style={{
+              backgroundColor: '#112240',
+              color: '#64ffda',
+              fontFamily: 'monospace'
+            }}
+          >
             {tech.trim()}
           </span>
         ))}

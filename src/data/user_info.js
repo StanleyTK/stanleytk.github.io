@@ -1,9 +1,9 @@
 const info = {
   "main": {
       "name": "Stanley Kim",
-"description": "Hi, I'm Stanley — a soon-to-graduate Computer Science student at Purdue University with diverse experiences in full-stack development. I excel at building applications and solving complex problems while following industry best practices. My hobbies include researching AI projects, swimming, weightlifting, playing poker, and chess!",
+"description": "I'm a Computer Science graduate from Purdue University with a passion for full-stack development. I'm into investing and researching automated trading strategies. When I'm not coding, I enjoy studying poker, swimming, and lifting. I'm currently located in Boston.",
       "role": "Software Engineer",
-      "photo": "pfp.png",
+      "photo": "pfp.jpg",
       "email": "stanleykim2003@gmail.com"
     },
   "socials": {
@@ -72,34 +72,35 @@ const info = {
   "projects": [
   /* 1 ──────────────────────────────── */
   {
-    "title": "BoilerMarket",
-    "description": "Full-stack marketplace for Purdue students.",
-    "technologies": "https://skillicons.dev/icons?i=react,typescript,django,firebase,mysql,aws&perline=6&theme=dark&size=32",
-    "github": "https://github.com/StanleyTK/BoilerMarket-Client",
-    "technologyUsed": "React, TypeScript, Tailwind CSS, Python, Django, Firebase, MySQL, AWS"
+    "title": "Portable Oxygen Concentrator (POC) Analysis",
+    "description": "Analysis of POC and other medical equipment data to build predictive models for device usage, patient behavior, and environmental factors. Served as research lead for Inogen, Inc.",
+    "technologies": "https://skillicons.dev/icons?i=python,aws,tensorflow,sql&perline=6&theme=dark&size=32",
+    "github": null,
+    "technologyUsed": "Python, SQL, AWS, TensorFlow, MATLAB, Java"
   },
 
   {
-    "title": "BluMap",
-    "description": "Developed a travel planning web application.",
-    "technologies": "https://skillicons.dev/icons?i=react,nextjs,nodejs,express,postgresql&perline=6&theme=dark&size=32",
-    "github": "https://github.com/StanleyTK/BluMap",
-    "technologyUsed": "React, NextJS, NodeJS, Express, PostgreSQL"
+    "title": "TikTalk",
+    "description": "Full-stack web application that generates TikTok-styled short-form educational videos after processing lecture mp4s, mp3s, or PDF notes.",
+    "technologies": "https://skillicons.dev/icons?i=react,nextjs,typescript,flask,firebase,docker&perline=6&theme=dark&size=32",
+    "github": "https://github.com/StanleyTK/TikTalk",
+    "technologyUsed": "React, Next.js, TypeScript, Flask, Firebase, Kafka, Docker, OpenAI Whisper, Google Gemini, Google Cloud, Google TTS, MoviePy"
   },
 
   {
-    "title": "StockPulse",
-    "description": "Developed a stock-market simulation game.",
-    "technologies": "https://skillicons.dev/icons?i=react,nextjs,java,spring,mysql&perline=6&theme=dark&size=32",
-    "github": "https://github.com/StanleyTK/stockpulse",
-    "technologyUsed": "React, NextJS, Java, Spring Boot, MySQL"
+    "title": "Reactify",
+    "description": "Canvas app that exports designs as React components for use in personal projects.",
+    "technologies": "https://skillicons.dev/icons?i=react,javascript&perline=6&theme=dark&size=32",
+    "github": "https://github.com/SavitTumuluri/Reactify",
+    "technologyUsed": "React, JavaScript, Canvas"
   },
 
   {
-    "title": "Healthcare Surgery Volume Forecasting",
-    "description": "Forecasting emergency-surgery volumes and helping IU Health ensure smoother patient care.",
-    "technologies": "https://skillicons.dev/icons?i=python,postgresql,tensorflow&perline=6&theme=dark&size=32",
-    "technologyUsed": "Python, SQL, Data Visualization"
+    "title": "ETF Signal Service",
+    "description": "Personal service that sends daily email reports with buy signals for long-term investing based on technical indicators.",
+    "technologies": "https://skillicons.dev/icons?i=java,python,aws&perline=6&theme=dark&size=32",
+    "github": "https://github.com/StanleyTK/etf-signal-service",
+    "technologyUsed": "Java, AWS Lambda, AWS SES, AWS EventBridge, Python, Jupyter"
   },
 
 ],
@@ -115,7 +116,7 @@ const info = {
           "school": "Conestoga High School",
           "degree": "High School Diploma",
           "year": "August 2018 - June 2022",
-          "image": "conestoga.png",
+          "image": "purdue.png",
 
         }
       ],
@@ -127,37 +128,37 @@ const info = {
   /* 1 ───────── Amazon Web Services ───────────────── */
   {
     "company": "Amazon Web Services",
-    "role": "Software Development Engineer Intern",
-    "year": "May 2025 – August 2025",
+    "role": "Software Development Engineer",
+    "year": "February 2026 – Present",
     "location": "Boston, MA",
     "image": "aws.png",
-    "description": "This summer I joined the AWS FSx Control Plane team, building and maintaining the management interfaces that let customers provision, configure, and manage FSx file systems across Windows, NetApp ONTAP, OpenZFS, and Lustre. My primary project is a client-side tag-filtering system for the FSx Console in TypeScript/React, enabling dynamic, multi-resource filtering (file systems, volumes, backups, storage VMs, snapshots) with debounced search and pagination. I’m also writing unit and integration tests to cover edge cases and validate filtering across every FSx resource type, ensuring reliable search and smoother resource discovery.",
+    "description": "I will be starting this position in February 2026.",
+    "technologies": "https://skillicons.dev/icons?i=typescript,react,aws&perline=5&theme=dark",
+    "technologyUsed": "TypeScript, React, AWS"
+  },
+
+  /* 2 ───────── Amazon Web Services (Intern) ───────── */
+  {
+    "company": "Amazon Web Services",
+    "role": "Software Development Engineer Intern",
+    "year": "May 2024 – August 2024",
+    "location": "Boston, MA",
+    "image": "aws.png",
+    "description": "I interned with the Amazon FSx Control Plane team responsible for the console frontend, public-facing APIs, regional expansion initiatives, and monitoring and tooling used to manage Amazon FSx services across AWS. I improved Amazon FSx Console user experience by enhancing search and filtering functionality, and refactored 50%+ of console test cases to remove legacy dependencies and support the upgrade to React 18+.",
     "technologies": "https://skillicons.dev/icons?i=typescript,react,aws&perline=5&theme=dark",
     "technologyUsed": "TypeScript, React, AWS, CloudWatch"
   },
 
-  /* 2 ───────── Kohl’s Technology ─────────────────── */
+  /* 3 ───────── Kohl's Technology ─────────────────── */
   {
-    "company": "Kohl’s Technology",
+    "company": "Kohl's Technology",
     "role": "Software Engineer Intern",
     "year": "June 2024 – August 2024",
     "location": "San Francisco, CA",
     "image": "kohls.png",
-    "description": "At the end of my sophomore year I joined the Kohl’s Marketplace team, concentrating on third-party seller integration. I enhanced Spring-Boot product-monitoring services by integrating external platform feeds and adding in-memory pagination, which reduced support workload. I architected a Spring Batch pipeline that streams product data into Google Cloud Storage buckets, generating roughly $3.5 million in annual revenue. I also instituted Docker- and Kubernetes-based CI/CD, sustaining 90 % test coverage, and helped refactor a legacy Java microservice into a standalone Kafka consumer to boost horizontal scalability for incoming seller updates.",
+    "description": "I interned with the Marketplace team responsible for providing 3rd party sellers the opportunity to conduct business on Kohls.com. I engineered an automated seller feed pipeline, consolidating data sources to help monetize marketplace products and return services. I also developed a UPC monitoring service to detect and resolve marketplace product listing issues on Kohls.com.",
     "technologies": "https://skillicons.dev/icons?i=spring,mongodb,gcp&perline=5&theme=dark",
     "technologyUsed": "Java, Spring Boot, MongoDB, GCP, Kafka, Docker, Kubernetes"
-  },
-
-  /* 3 ───────── The Data Mine @ Purdue (Inogen) ───── */
-  {
-    "company": "The Data Mine @ Purdue University",
-    "role": "Research Project Lead",
-    "year": "August 2023 – May 2024",
-    "location": "West Lafayette, IN",
-    "image": "purdue.png",
-    "description": "As Project Lead for a 12-member Agile team partnering with Inogen, I organized sprint planning and weekly stakeholder reviews while driving the full ML pipeline for predictive maintenance of portable oxygen concentrators. I built Random Forest and multivariate LSTM models in Python (TensorFlow, scikit-learn), engineered features from 30 + on-device sensors, tuned hyperparameters, and achieved 81 % accuracy on multi-month hold-out data. Weekly executive briefings translated model insights into actionable maintenance schedules and improved device reliability.",
-    "technologies": "https://skillicons.dev/icons?i=python,tensorflow,mysql&perline=6&theme=dark",
-    "technologyUsed": "Python, scikit-learn, TensorFlow/Keras"
   },
 
   /* 4 ───────── Comerica Bank ─────────────────────── */
@@ -185,7 +186,7 @@ const info = {
   // }
 ],
 
-"footer": "© 2025 Stanley Kim."
+"footer": "© 2026 Stanley Kim."
 }
 
 export default info;

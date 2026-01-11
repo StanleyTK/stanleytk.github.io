@@ -25,4 +25,10 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #0a192f;
+}
+
+body {
+  background-color: #0a192f;
+  color: #ccd6f6;
 }

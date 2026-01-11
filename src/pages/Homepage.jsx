@@ -1,147 +1,86 @@
-import React, { useContext, useEffect, useState, useMemo } from "react";
-import {
-  FaFolderOpen,
-  FaBriefcase,
-  FaTools,
-  FaGraduationCap,
-  FaEnvelope,
-} from "react-icons/fa";
-
-import Project from "../components/Project";
-import ExperienceCard from "../components/ExperienceCard";
-import SkillsSection from "../components/SkillsSection";
-import ContactSection from "../components/ContactSection";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Landing from "../components/Landing";
-import ToggleTheme from "../components/ToggleTheme.jsx";
-import EducationSection from "../components/EducationSection";
-
-import user_info from "../data/user_info.js";
+import CursorGlow from "../components/CursorGlow.jsx";
+import Project from "../components/Project";
+import blogData from "../data/blog.json";
+import projectsData from "../data/projects.json";
 import { AppContext } from "../App.jsx";
-
-
-const SectionHeader = React.memo(({ icon: Icon, text }) => (
-  <div className="flex items-center gap-3 mb-8">
-    <Icon className="text-2xl text-gray-900 dark:text-gray-100" />
-    <h2 className="text-3xl font-extrabold text-gray-900 dark:text-gray-100">
-      {text}
-    </h2>
-    <span className="flex-grow h-px bg-gray-400 dark:bg-gray-600" />
-  </div>
-));
-SectionHeader.displayName = "SectionHeader";
 
 // ————————————————————————————————————————————————————————————————
 //                              Homepage
 // ————————————————————————————————————————————————————————————————
 function Homepage() {
-  const { theme, switchTheme } = useContext(AppContext);
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    const handleLoad = () => setTimeout(() => setIsReady(true), 150);
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad, { once: true });
-    }
-  }, []);
-
-  const wrapperCls = useMemo(
-    () =>
-      [
-        "transition-opacity duration-500",
-        isReady ? "opacity-100" : "opacity-0",
-        "lg:max-w-[1200px] md:mx-auto min-h-screen w-full border-x border-gray-100 dark:border-gray-800",
-        "bg-white/90 dark:bg-[#0e182c]/90 lg:backdrop-blur-sm",
-        "contain-paint",
-      ].join(" "),
-    [isReady]
-  );
+  const { theme } = useContext(AppContext);
+  const featuredProjects = projectsData.filter(p => p.featured);
 
   return (
-    <div className="scroll-smooth">
-      <div className={wrapperCls}>
-        <ToggleTheme switchTheme={switchTheme} />
+    <div className="scroll-smooth min-h-screen relative" style={{ backgroundColor: '#0a192f', color: '#ccd6f6' }}>
+      <CursorGlow />
+      <div className="min-h-screen w-full pt-16 relative z-10">
         <Landing />
 
-        {/* ───────── Projects ───────── */}
-        <section id="projects" className="px-6 md:px-24 mt-10">
-          <SectionHeader icon={FaFolderOpen} text="Projects" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
-            {user_info.projects.map((project) => (
-              <Project key={project.name} theme={theme} {...project} />
+        {/* ───────── Featured Projects ───────── */}
+        {featuredProjects.length > 0 && (
+          <section id="featured-projects" className="max-w-[1400px] mx-auto px-6 md:px-12 mt-12 mb-20">
+            <div className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Featured Projects</h2>
+              <div className="h-px w-24" style={{ backgroundColor: '#64ffda' }}></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {featuredProjects.map((project) => (
+                <Project 
+                  key={project.title} 
+                  theme={theme} 
+                  title={project.title}
+                  description={project.summary}
+                  technologyUsed={project.builtWith.join(', ')}
+                  github={project.github}
+                  featured={project.featured}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ───────── Blog ───────── */}
+        <section id="blog" className="max-w-[1400px] mx-auto px-6 md:px-12 mt-12 mb-20">
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Blog</h2>
+            <div className="h-px w-24" style={{ backgroundColor: '#64ffda' }}></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {blogData.map((blog) => (
+              <Link
+                key={blog.id}
+                to={`/blog/${blog.slug}`}
+                className="block"
+              >
+                <article 
+                  className="p-6 rounded transition-all duration-300 hover:transform hover:-translate-y-1 cursor-pointer"
+                  style={{ backgroundColor: '#112240' }}
+                >
+                  <div className="mb-4">
+                    <span className="text-sm" style={{ color: '#64ffda', fontFamily: 'monospace' }}>
+                      {blog.year}
+                    </span>
+                    <h3 
+                      className="text-xl font-semibold mt-2 mb-3 transition-colors"
+                      style={{ color: '#ccd6f6' }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#64ffda'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#ccd6f6'}
+                    >
+                      {blog.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: '#8892b0' }}>
+                    {blog.description}
+                  </p>
+                </article>
+              </Link>
             ))}
           </div>
-          <div className="flex justify-start mt-12">
-            <a
-              href="https://github.com/StanleyTK"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 border border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 hover:bg-blue-600 hover:text-gray-100 transition-all duration-300"
-            >
-              View All Projects
-            </a>
-          </div>
-        </section>
-
-
-
-        {/* ───────── Experience ───────── */}
-        <section id="experience" className="px-6 md:px-24 mt-24">
-          <SectionHeader icon={FaBriefcase} text="Experience" />
-          <div className="grid grid-cols-1 gap-8 md:gap-12">
-            {user_info.experience.map((job) => (
-              <ExperienceCard key={job.company + job.title} {...job} />
-            ))}
-          </div>
-            {/* <div className="flex justify-start mt-12">
-                <a
-              href="public/Resume_StanleyKim.pdf"
-              download
-              className="px-6 py-3 border border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 hover:bg-green-600 hover:text-gray-100 transition-all duration-300"
-            >
-              Download Resume
-            </a>
-          </div> */}
-        </section>
-
-        {/* ───────── Skills ───────── */}
-        <section id="skills" className="mt-24">
-          <div className="container mx-auto px-6 md:px-24">
-            <SectionHeader icon={FaTools} text="Skills" />
-          </div>
-
-          <SkillsSection
-            theme={theme === "dark" ? "&theme=dark" : ""} 
-            skills={user_info.skills}  
-          />
-        </section>
-
-          {/* <section id="blog" className="px-6 md:px-24 mt-24">
-          <SectionHeader icon={FaGraduationCap} text="Blog" />
-          <div className="text-lg text-gray-500 dark:text-gray-300">
-            <p>
-              Coming soon... 
-            </p>
-          </div>
-        </section> */}
-
-
-        {/* ───────── Education ───────── */}
-        <section id="education" className="mt-24">
-          <div className="container mx-auto px-6 md:px-24">
-            <SectionHeader icon={FaGraduationCap} text="Education" />
-          </div>
-          <EducationSection education={user_info.education} />
-        </section>
-
-        {/* ───────── Contact ───────── */}
-        <section id="contact" className="mt-24">
-          <div className="container mx-auto px-6 md:px-24">
-            <SectionHeader icon={FaEnvelope} text="Contact" />
-          </div>
-          <ContactSection />
         </section>
 
         <Footer />
