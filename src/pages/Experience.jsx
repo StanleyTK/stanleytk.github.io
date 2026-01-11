@@ -10,10 +10,10 @@ function Experience() {
   return (
     <div className="scroll-smooth min-h-screen bg-[#0a192f] text-[#ccd6f6] relative">
       <CursorGlow />
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-20 pb-20 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-12 pt-12 md:pt-20 pb-12 md:pb-20 relative z-10">
         
-        <div className="mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-[#ccd6f6] mb-4">
+        <div className="mb-8 md:mb-16">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#ccd6f6] mb-3 md:mb-4">
             Experience
           </h1>
           <div className="h-px w-32 bg-[#64ffda]"></div>

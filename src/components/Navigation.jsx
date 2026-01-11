@@ -20,8 +20,8 @@ function Navigation() {
 
   return (
     <nav className="fixed top-0 right-0 z-50 w-full backdrop-blur-sm" style={{ backgroundColor: '#112240', borderBottom: '1px solid #233554' }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-12">
+        <div className="flex items-center justify-between h-12 md:h-16">
           <Link
             to="/"
             className="flex items-center gap-2 transition-opacity"
@@ -29,26 +29,26 @@ function Navigation() {
             onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
           >
             <div 
-              className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0"
+              className="w-7 h-7 md:w-8 md:h-8 rounded flex items-center justify-center flex-shrink-0"
               style={{
                 backgroundColor: '#112240',
                 border: '1px solid #233554'
               }}
             >
               <span 
-                className="text-sm font-bold"
+                className="text-xs md:text-sm font-bold"
                 style={{ color: '#64ffda', fontFamily: 'monospace' }}
               >
                 SK
               </span>
             </div>
           </Link>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-3 md:gap-8">
             {navItems.map(({ path, label }) => (
               <Link
                 key={path}
                 to={path}
-                className="px-3 py-2 text-sm transition-colors"
+                className="px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm transition-colors"
                 style={{ 
                   fontFamily: 'monospace',
                   color: isActive(path) ? '#64ffda' : '#ccd6f6'
@@ -64,7 +64,7 @@ function Navigation() {
                   }
                 }}
               >
-                <span className="hidden sm:inline">{label}</span>
+                {label}
               </Link>
             ))}
           </div>

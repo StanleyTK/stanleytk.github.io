@@ -6,10 +6,10 @@ function Projects() {
   return (
     <div className="scroll-smooth min-h-screen relative" style={{ backgroundColor: '#0a192f', color: '#ccd6f6' }}>
       <CursorGlow />
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-20 pb-20 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-12 pt-12 md:pt-20 pb-12 md:pb-20 relative z-10">
         
-        <div className="mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4" style={{ color: '#ccd6f6' }}>
+        <div className="mb-8 md:mb-16">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4" style={{ color: '#ccd6f6' }}>
             Projects
           </h1>
           <div className="h-px w-32" style={{ backgroundColor: '#64ffda' }}></div>

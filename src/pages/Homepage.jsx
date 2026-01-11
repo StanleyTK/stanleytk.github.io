@@ -18,17 +18,17 @@ function Homepage() {
   return (
     <div className="scroll-smooth min-h-screen relative" style={{ backgroundColor: '#0a192f', color: '#ccd6f6' }}>
       <CursorGlow />
-      <div className="min-h-screen w-full pt-16 relative z-10">
+      <div className="min-h-screen w-full pt-12 md:pt-16 relative z-10">
         <Landing />
 
         {/* ───────── Featured Projects ───────── */}
         {featuredProjects.length > 0 && (
-          <section id="featured-projects" className="max-w-[1400px] mx-auto px-6 md:px-12 mt-12 mb-20">
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Featured Projects</h2>
+          <section id="featured-projects" className="max-w-[1400px] mx-auto px-4 md:px-12 mt-8 md:mt-12 mb-12 md:mb-20">
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4" style={{ color: '#ccd6f6' }}>Featured Projects</h2>
               <div className="h-px w-24" style={{ backgroundColor: '#64ffda' }}></div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {featuredProjects.map((project) => (
                 <Project 
                   key={project.title} 
@@ -45,9 +45,9 @@ function Homepage() {
         )}
 
         {/* ───────── Blog ───────── */}
-        <section id="blog" className="max-w-[1400px] mx-auto px-6 md:px-12 mt-12 mb-20">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#ccd6f6' }}>Blog</h2>
+        <section id="blog" className="max-w-[1400px] mx-auto px-4 md:px-12 mt-8 md:mt-12 mb-12 md:mb-20">
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4" style={{ color: '#ccd6f6' }}>Blog</h2>
             <div className="h-px w-24" style={{ backgroundColor: '#64ffda' }}></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
