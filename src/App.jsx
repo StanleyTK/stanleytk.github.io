@@ -25,7 +25,7 @@ function App() {
 
   return (
     <AppContext.Provider value={{ theme, switchTheme }}>
-      <BrowserRouter basename="/Portfolio">
+      <BrowserRouter>
         <Navigation />
           <Routes>
             <Route path="/" element={<Homepage />} />

@@ -11,7 +11,7 @@ function Navigation() {
   ];
 
   const isActive = (path) => {
-    const currentPath = location.pathname.replace("/Portfolio", "") || "/";
+    const currentPath = location.pathname || "/";
     if (path === "/") {
       return currentPath === "/";
     }

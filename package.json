@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://stanleytk.github.io/Portfolio",
+  "homepage": "https://stanleytk.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
