@@ -1,5 +1,57 @@
 [
   {
+    "id": 2,
+    "year": "Feb 2026",
+    "title": "Daily Algorithmic Trading Portfolio: Architecture + Performance",
+    "description": "How I run a once-per-day paper-trading rebalance pipeline across 10 independent strategy modules and track risk metrics.",
+    "slug": "daily-algorithmic-trading-portfolio",
+    "intro": "This project is a daily algorithmic trading portfolio running on Alpaca paper trading. Instead of relying on one signal, I combine 10 independent strategy modules and rebalance once each trading day.",
+    "execution": "Execution is fully automated through AWS Lambda. At 3:50 PM ET, the system evaluates signals, applies risk constraints, computes target weights, and rebalances positions into the close.",
+    "alpacaLink": "https://app.alpaca.markets/paper/dashboard/overview",
+    "strategyOverview": [
+      {
+        "title": "Strategy 1: Regime-Aware Hedging",
+        "description": "Uses long-term market trend state plus short-term momentum extremes to switch between growth exposure, volatility hedges, and defensive cash-like instruments."
+      },
+      {
+        "title": "Strategy 2: High-Frequency Volatility Rotation",
+        "description": "Scales into volatility products during overbought risk conditions and rotates into inverse sector exposure when specific industries become statistically stretched."
+      },
+      {
+        "title": "Strategy 3: Corner-Case Volatility Capture",
+        "description": "Targets extreme market states by rotating between different volatility leverage levels and only engaging dip-buy setups when long-term market structure is constructive."
+      },
+      {
+        "title": "Strategy 4: Trend + Relative-Strength Allocator",
+        "description": "Compares managed-futures versus technology leadership, then allocates to top/bottom ranked leveraged instruments based on short-term relative-strength momentum."
+      },
+      {
+        "title": "Strategy 5: Emerging Markets Flight-to-Quality",
+        "description": "Trades emerging markets long/short exposure by combining oversold triggers with cross-asset bond-versus-equity risk signals."
+      },
+      {
+        "title": "Strategy 6: QQQ Liquidity Rotation",
+        "description": "Runs overbought hedging checks across broad sectors, then rotates into defensive or offensive assets depending on volatility and bond-risk alignment."
+      },
+      {
+        "title": "Strategy 7: QQQ Trend-and-Mean-Reversion Hybrid",
+        "description": "Uses moving-average structure for trend direction, then overlays short-term mean reversion entries when long-term trend remains intact."
+      },
+      {
+        "title": "Strategy 8: Emerging Markets Versioned Model",
+        "description": "A versioned emerging-markets module that emphasizes confirmation from bond leadership and uses directional leverage accordingly."
+      },
+      {
+        "title": "Strategy 9: Treasury Momentum and Hedge",
+        "description": "Trades long-duration treasury directionally with optional volatility overlays, including inverse treasury exposure in sustained bond downtrends."
+      },
+      {
+        "title": "Strategy 10: Gold Trend Reversal Engine",
+        "description": "Combines multi-horizon moving-average trend filters with RSI reversal thresholds to switch between leveraged long-gold and inverse-gold exposure."
+      }
+    ]
+  },
+  {
     "id": 1,
     "year": "Jan 2026",
     "title": "Starting My Blog Journey",
@@ -7,4 +59,3 @@
     "slug": "starting-my-blog-journey"
   }
 ]
-

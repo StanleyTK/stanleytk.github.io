@@ -36,6 +36,7 @@ function Homepage() {
                   title={project.title}
                   description={project.summary}
                   technologyUsed={project.builtWith.join(', ')}
+                  link={project.link}
                   github={project.github}
                   featured={project.featured}
                 />

@@ -65,6 +65,55 @@ function BlogPost() {
             <p className="text-lg leading-relaxed mb-6">
               {post.description}
             </p>
+
+            {post.intro && (
+              <p className="text-base leading-relaxed mb-4">
+                {post.intro}
+              </p>
+            )}
+
+            {post.execution && (
+              <p className="text-base leading-relaxed mb-6">
+                {post.execution}
+              </p>
+            )}
+
+            {post.alpacaLink && (
+              <a
+                href={post.alpacaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded text-sm mb-8 transition-colors"
+                style={{ border: "1px solid #64ffda", color: "#64ffda", fontFamily: "monospace" }}
+              >
+                View Alpaca Paper Trading Profile
+              </a>
+            )}
+
+            {post.strategyOverview && post.strategyOverview.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-2xl font-semibold mb-4" style={{ color: '#ccd6f6' }}>
+                  10 Strategy Modules
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {post.strategyOverview.map((strategy) => (
+                    <article
+                      key={strategy.title}
+                      className="rounded p-4"
+                      style={{ backgroundColor: "#112240", border: "1px solid #233554" }}
+                    >
+                      <h3 className="text-base font-semibold mb-2" style={{ color: "#ccd6f6" }}>
+                        {strategy.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed" style={{ color: "#8892b0" }}>
+                        {strategy.description}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            )}
+
           </div>
         </article>
 
@@ -75,4 +124,3 @@ function BlogPost() {
 }
 
 export default BlogPost;
-

@@ -1,13 +1,23 @@
 [
   {
     "year": "2026",
+    "title": "Algorithmic Trading Portfolio (Paper Trading)",
+    "madeAt": "Personal",
+    "builtWith": ["Python", "AWS Lambda", "Alpaca", "Pandas", "NumPy"],
+    "link": "/blog/daily-algorithmic-trading-portfolio",
+    "github": null,
+    "summary": "A daily multi-strategy paper-trading system with 10 strategy modules, risk controls, and scheduled rebalancing at 3:50 PM ET.",
+    "featured": true
+  },
+  {
+    "year": "2026",
     "title": "ETF Signal Service",
     "madeAt": "Personal",
     "builtWith": ["Java", "AWS", "Python", "Jupyter"],
     "link": null,
     "github": "https://github.com/StanleyTK/etf-signal-service",
     "summary": "Personal service that sends daily email reports with buy signals for long-term investing based on technical indicators.",
-    "featured": true
+    "featured": false
   },
   {
     "year": "2025",
@@ -101,4 +111,3 @@
     "summary": "High school internship project focused on integration testing of frontend website for point of sale system."
   }
 ]
-
