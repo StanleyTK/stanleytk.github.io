@@ -1,7 +1,7 @@
 const info = {
   "main": {
       "name": "Stanley Kim",
-"description": "I'm a Computer Science graduate from Purdue University with a passion for full-stack development. I'm into investing and researching automated trading strategies. When I'm not coding, I enjoy studying poker, swimming, and lifting. I'm currently located in Boston.",
+"description": "I'm a Computer Science graduate from Purdue University, currently working at AWS FSx Control Plane in Boston.",
       "role": "Software Engineer",
       "photo": "pfp.jpg",
       "email": "stanleykim2003@gmail.com"
@@ -132,7 +132,7 @@ const info = {
     "year": "February 2026 – Present",
     "location": "Boston, MA",
     "image": "aws.png",
-    "description": "I will be starting this position in February 2026.",
+    "description": "Returned to my intern team shared FSx Control Plane which includes AWS Console, the public facing Amazon FSx API, a workflow service, a monitoring service, and operational tooling. Currently working on region building automation.",
     "technologies": "https://skillicons.dev/icons?i=typescript,react,aws&perline=5&theme=dark",
     "technologyUsed": "TypeScript, React, AWS"
   },
@@ -144,7 +144,7 @@ const info = {
     "year": "May 2025 – August 2025",
     "location": "Boston, MA",
     "image": "aws.png",
-    "description": "I interned with the Amazon FSx Control Plane team responsible for the console frontend, public-facing APIs, regional expansion initiatives, and monitoring and tooling used to manage Amazon FSx services across AWS. I improved Amazon FSx Console user experience by enhancing search and filtering functionality, and refactored 50%+ of console test cases to remove legacy dependencies and support the upgrade to React 18+.",
+    "description": "Enhanced FSx Console search and filtering functionality, and refactoring frontend test cases to remove legacy dependencies and support the upgrade to React 18+.",
     "technologies": "https://skillicons.dev/icons?i=typescript,react,aws&perline=5&theme=dark",
     "technologyUsed": "TypeScript, React, AWS, CloudWatch"
   },

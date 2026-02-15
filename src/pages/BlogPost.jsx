@@ -9,6 +9,9 @@ function BlogPost() {
   const navigate = useNavigate();
   
   const post = blogData.find(blog => blog.slug === slug);
+  const narrativeParagraphs = post?.paragraphs?.length
+    ? post.paragraphs
+    : [post?.intro, post?.execution, post?.note, post?.basicObservations].filter(Boolean);
   const containerWidthClass = post?.statsReportPath ? "max-w-[1500px]" : "max-w-[900px]";
 
   if (!post) {
@@ -72,29 +75,20 @@ function BlogPost() {
               {post.description}
             </p>
 
-            {post.intro && (
-              <p className="text-base leading-relaxed mb-4">
-                {post.intro}
+            {narrativeParagraphs.map((paragraph, index) => (
+              <p key={`${post.slug}-paragraph-${index}`} className="text-lg leading-relaxed mb-6">
+                {paragraph}
               </p>
-            )}
-
-            {post.execution && (
-              <p className="text-base leading-relaxed mb-6">
-                {post.execution}
-              </p>
-            )}
-
-            {post.note && (
-              <p className="text-base leading-relaxed mb-6">
-                {post.note}
-              </p>
-            )}
+            ))}
 
             {post.strategyOverview && post.strategyOverview.length > 0 && (
               <div className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4" style={{ color: '#ccd6f6' }}>
                   Algorithm Strategy Overview
                 </h2>
+                <p className="text-lg leading-relaxed mb-4" style={{ color: "#8892b0" }}>
+                  These are the 10 algorithms I put together to make diversification attainable without losing all returns by combining different sectors with strong long-term return profiles over decades.
+                </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {post.strategyOverview.map((strategy) => (
                     <article
@@ -113,7 +107,7 @@ function BlogPost() {
                           {strategy.maxDrawdown && <p>Max Drawdown: {strategy.maxDrawdown}</p>}
                         </div>
                       )}
-                      <p className="text-sm leading-relaxed" style={{ color: "#8892b0" }}>
+                      <p className="text-base leading-relaxed" style={{ color: "#8892b0" }}>
                         {strategy.description}
                       </p>
                     </article>
@@ -155,7 +149,7 @@ function BlogPost() {
                 <h2 className="text-2xl font-semibold mb-4" style={{ color: "#ccd6f6" }}>
                   Why This Combination Works
                 </h2>
-                <p className="text-base leading-relaxed" style={{ color: "#8892b0" }}>
+                <p className="text-lg leading-relaxed" style={{ color: "#8892b0" }}>
                   {post.combinationSummary}
                 </p>
               </section>
@@ -172,7 +166,7 @@ function BlogPost() {
                       <h3 className="text-base font-semibold mb-2" style={{ color: "#ccd6f6" }}>
                         {moment.title}
                       </h3>
-                      <p className="text-base leading-relaxed" style={{ color: "#8892b0" }}>
+                      <p className="text-lg leading-relaxed" style={{ color: "#8892b0" }}>
                         {moment.description}
                       </p>
                     </article>
@@ -187,19 +181,30 @@ function BlogPost() {
                   Overfitting And Reliability Notes
                 </h2>
                 {post.overfitConcernSummary && (
-                  <p className="text-base leading-relaxed mb-4" style={{ color: "#8892b0" }}>
+                  <p className="text-lg leading-relaxed mb-4" style={{ color: "#8892b0" }}>
                     {post.overfitConcernSummary}
                   </p>
                 )}
                 {post.overfitConcernPoints && post.overfitConcernPoints.length > 0 && (
                   <ul className="space-y-3 list-disc pl-5">
                     {post.overfitConcernPoints.map((point) => (
-                      <li key={point} className="text-base leading-relaxed" style={{ color: "#8892b0" }}>
+                      <li key={point} className="text-lg leading-relaxed" style={{ color: "#8892b0" }}>
                         {point}
                       </li>
                     ))}
                   </ul>
                 )}
+              </section>
+            )}
+
+            {post.closingObservation && (
+              <section className="mb-8">
+                <h2 className="text-2xl font-semibold mb-4" style={{ color: "#ccd6f6" }}>
+                  From What I Have Seen Over The Full Backtest
+                </h2>
+                <p className="text-lg leading-relaxed" style={{ color: "#8892b0" }}>
+                  {post.closingObservation}
+                </p>
               </section>
             )}
 

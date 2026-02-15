@@ -5,7 +5,7 @@ function ExperienceCard({ image, role, company, year, description, location, tec
   const technologyUsedList = technologyUsed.split(',');
 
   return (
-    <div className="relative pl-8 pb-8 border-l-2 border-[#233554] hover:border-[#64ffda] transition-colors group">
+    <div className="relative pl-8 pb-12 border-l-2 border-[#233554] hover:border-[#64ffda] transition-colors group">
       <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#0a192f] border-2 border-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity"></div>
       
       <div className="mb-2">
@@ -24,9 +24,9 @@ function ExperienceCard({ image, role, company, year, description, location, tec
         <p className="text-sm text-[#8892b0] mb-4">{location}</p>
       </div>
       
-      <div className="text-[#8892b0] mb-4">
+      <div className="text-[#8892b0] mb-6">
         {descriptionPoints.map((point, idx) => (
-          <p key={idx} className="mb-3 leading-relaxed">
+          <p key={idx} className="mb-3 leading-relaxed text-lg md:text-xl break-words">
             {point.trim()}
           </p>
         ))}

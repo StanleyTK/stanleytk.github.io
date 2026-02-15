@@ -6,6 +6,7 @@ function Navigation() {
 
   const navItems = [
     { path: "/", label: "Home" },
+    { path: "/blog", label: "Blogs" },
     { path: "/projects", label: "All Projects" },
     { path: "/experience", label: "Experience" },
   ];
@@ -15,7 +16,7 @@ function Navigation() {
     if (path === "/") {
       return currentPath === "/";
     }
-    return currentPath === path;
+    return currentPath === path || currentPath.startsWith(`${path}/`);
   };
 
   return (
@@ -75,4 +76,3 @@ function Navigation() {
 }
 
 export default Navigation;
-

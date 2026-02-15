@@ -32,7 +32,7 @@ function Project({ theme, title, description, technologies, link, github, techno
         )}
         <span>{title}</span>
       </h3>
-      <p className="text-[#8892b0] text-sm leading-relaxed mb-6">
+      <p className="text-[#8892b0] text-base leading-relaxed mb-6">
         {description}
       </p>
       

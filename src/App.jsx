@@ -5,6 +5,7 @@ import Homepage from "./pages/Homepage";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Archive from "./pages/Archive";
+import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/404";
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/experience" element={<Experience />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/archive" element={<Archive />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />

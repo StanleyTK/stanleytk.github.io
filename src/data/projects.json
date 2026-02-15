@@ -1,12 +1,21 @@
 [
   {
     "year": "2026",
+    "title": "Crypto Mean Reversion + ML Filtering",
+    "madeAt": "Personal",
+    "builtWith": ["C++"],
+    "link": null,
+    "github": null,
+    "summary": "(Work in progress) C++ crypto trading system that combines SMA-based mean reversion with ML filters to avoid entries during strong trend regimes."
+  },
+  {
+    "year": "2026",
     "title": "Algorithmic Portfolio Management",
     "madeAt": "Personal",
     "builtWith": ["Python", "AWS", "Alpaca"],
     "link": "/blog/daily-algorithmic-trading-portfolio",
     "github": null,
-    "summary": "A daily, serverless 10-strategy portfolio that delivers over 100% CAGR over 12+ years with a 3.58 Sharpe, ~50% lower max drawdown than SPY (-17% vs -34%).",
+    "summary": "A daily, serverless 10-strategy portfolio that delivers over 100% CAGR over 12+ years with a 3.58 Sharpe, and lower drawdown than S&P500.",
     "featured": true
   },
   {
@@ -85,7 +94,7 @@
   },
   {
     "year": "2024",
-    "title": "Portable Oxygen Concentrator (POC) Analysis",
+    "title": "POC Analysis",
     "madeAt": "Inogen",
     "builtWith": ["Python", "SQL", "TensorFlow", "MATLAB"],
     "link": null,

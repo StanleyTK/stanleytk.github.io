@@ -4,11 +4,15 @@
     "year": "Feb 2026",
     "title": "Algorithmic Portfolio Management",
     "slug": "daily-algorithmic-trading-portfolio",
-    "description": "A daily, serverless 10-strategy portfolio that delivers over 100% CAGR over 12+ years with a 3.58 Sharpe, ~50% lower max drawdown than SPY (-17% vs -34%).",
+    "description": "A daily serverless portfolio of 10 algorithms, each at 10% weight, with strong long-term returns and better drawdown control than just holding the S&P 500.",
     "statsReportPath": "/total_strategy.quantstats.html",
-    "intro": "Rule #1 of investing is: do not blow up. Many retail algo portfolios quietly fail because they concentrate almost entirely in high-beta tech or semiconductors and assume trends will persist. I made this mistake early on. The core idea here is to run multiple algorithms concurrently so performance is not dependent on one style. As you will see in the results, combining multiple low-correlation algorithms helps reduce drawdowns versus relying on any single model.",
-    "execution": "I built and iterated on this system over ~4 months. The entire pipeline runs serverlessly on AWS Lambda, with DynamoDB used for state, positions, and daily audit logs. Amazon SES emails me the exact trades and allocations at 3:50 PM ET before market close. I intentionally avoided EC2 because the pricing compared to Lambda functions is worse as it only runs once per day. Each of the 10 algorithms is fixed at a 10% portfolio weight, and the portfolio rotates daily based on each model’s signal. Individually, several algorithms have meaningfully larger drawdowns and lower Sharpe than the total combined portfolio. The combined system works because the algorithms are not too correlated and can survive the majority of market regimes together.",
-    "note": "Note: This algorithm is probably overfit. That said, the 12-year historical performance is strong, several of the underlying algorithms have strong community track records, and not all of the algorithms were developed by me. OOS starts in January 2026 and I have under 2 months of paper trading so far. I plan to post another update in a few months, and this stack has been live since February 17, 2026.",
+    "paragraphs": [
+      "Rule #1 for me is simple: do not blow up. As a software engineer who recently started diving into algo trading, what people have told me is that a lot of retail algo portfolios quietly fail because they lean heavily on the same high-beta tech idea and assume trends will always continue. This version is built around running multiple different algorithms together so performance is not tied to one signal style.",
+      "Over the last 6 months, I have extesnsively learned, researched, backtested and built my own trading infrastructure. Building these algorithms in the beginning was a massive headache as my lack of experience led to algorithms that were biased, overfit, and unprofitable backtests, but online communities and AI tools helped me pinpoint the mistakes I was making.",
+      "My trading infrastucture is serverless on AWS. Every day at 3:50 PM ET, SES sends me what traded and the allocation snapshot before the close. Each algorithm stays at a fixed 10% weight, and I rotate based on each model's signal. On their own, some algorithms have much worse drawdowns and lower Sharpe than the combined portfolio. The main edge is that they are not too correlated, so the overall system holds up better across different regimes.",
+      "The algo I'm sharing is most likely overfit, as it is extremely unlikely to achieve these results with no meaningful live testing data to back up the claims. That said, the backtest is long (12+ years), several of these algorithms have strong community history, and not all of them were developed by me. OOS starts in January 2026 and I currently have under 2 months of paper-trading history. I recently put real money into the algo and plan on sharing what happens in the next few months."
+    ],
+    "closingObservation": "From what I have seen over the full backtest (including pre-2020 years), this portfolio tends to work best when markets change direction quickly and volatility jumps. During the long 2012-2017 bull run, the portfolio benefited from the positive trend, while defensive algorithms helped during pullbacks. The portfolio handled 2018 well, even though the market was unprofitable overall and very choppy. It then handled major shocks like COVID in 2020 and the 2022 rate-hike regime especially well. The biggest weakness of this approach is choppy, mean-reverting markets. The portfolio is designed to do best when regimes flip cleanly (fast bull/bear transitions) or when trends persist. Early 2012 was neither: equities were choppy, bonds were volatile, and volatility spiked and mean-reverted several times, resulting in the biggest drawdown of the algorithm. More recently, in 2024-2026, markets have been more sideways and mean-reverting, which hurts trend-based algorithms, but diversification across other algorithms (especially gold) helped overall performance. With that said, the portfolio has outperformed the S&P 500 in every year of the backtest.",
     "strategyOverview": [
       {
         "title": "Strat 1: Equity Regime + Dip Buyer",
@@ -16,7 +20,7 @@
         "cagr": "50.42%",
         "sharpe": "1.48",
         "maxDrawdown": "-25.92%",
-        "description": "The goal of this algorithm is to capture rebounds. It spends most of its time in bonds or cash-like assets, but buys leveraged equity exposure during short-term drawdowns when the market regime is favorable. When markets become extended or risky, it shifts back to defensive positioning like bonds."
+        "description": "This algo is my dip-catcher. Most of the time it sits in bonds or cash-like exposure, then buys leveraged equity when the market pulls back and the setup still looks healthy. If conditions get stretched or messy, it goes back to defense."
       },
       {
         "title": "Strat 2: Tech Beta with Defensive Fallback",
@@ -24,7 +28,7 @@
         "cagr": "176.59%",
         "sharpe": "2.38",
         "maxDrawdown": "-40.21%",
-        "description": "This strategy concentrates in technology and growth leadership when macro and trend conditions are supportive. When conditions worsens, it rotates into bonds or defensive assets. This sleeve captures long-duration tech bull markets while avoiding permanent exposure during regime breakdowns."
+        "description": "This algorithm leans into tech when trend and macro conditions are favorable. If those conditions weaken, it rotates into bonds or other defensive assets. The idea is to participate in strong tech runs without being permanently stuck in full beta."
       },
       {
         "title": "Strat 3: Sector Momentum with Crash Overlay",
@@ -33,7 +37,7 @@
         "cagr": "169.54%",
         "sharpe": "2.47",
         "maxDrawdown": "-36.99%",
-        "description": "This strategy rotates among equity sectors based on relative strength and momentum, aiming to hold the most favorable sectors. It layers in defensive or hedging logic when markets are bearish."
+        "description": "This algo rotates into the sectors with the best relative strength and momentum. Instead of owning everything equally, it follows leadership. When leadership breaks down or the market turns weak, it shifts more defensive."
       },
  {
    "title": "Strat 4: Volatility State Machine",
@@ -42,7 +46,7 @@
    "cagr": "193.82%",
    "sharpe": "3.00",
    "maxDrawdown": "-25.26%",
-   "description": "This is an active volatility trading engine, treating volatility as a regime that transitions between calm, building stress, and crisis states. In calm markets, it harvests carry or stays risk-on. As stress rises, it progressively rotates into convex volatility exposure and defensive assets. During crisis regimes, it prioritizes capital preservation."
+   "description": "This is my volatility regime engine. It treats markets as calm, stressed, or crisis. In calm markets it behaves more carry/risk-on, and as stress builds it rotates harder into convex vol exposure. In crisis mode it focuses on protecting capital first."
  },
  {
    "title": "Strat 5: Overbought Volatility Hedge Ladder",
@@ -51,7 +55,7 @@
    "cagr": "127.91%",
    "sharpe": "1.71",
    "maxDrawdown": "-52.93%",
-   "description": "This is a pure defensive overlay designed to provide systematic crash insurance. It does not attempt to trade volatility cycles for profit. Instead, it monitors equity overextension and progressively builds convex volatility hedges as markets become volatile."
+   "description": "This algo is mostly insurance. It watches for overextended equity conditions and gradually builds volatility hedges. It can drag during smooth bull runs, but it is there to help when markets snap lower."
  },
  {
    "title": "Strat 6: Cross-Asset Trend Risk Switch",
@@ -60,7 +64,7 @@
    "cagr": "112.86%",
    "sharpe": "1.95",
    "maxDrawdown": "-37.42%",
-   "description": "This strategy uses bond trends as a signal for overall market risk. When bonds suggest markets are stable and liquidity is healthy, it allows more stock exposure. When bond trends point to tightening or rising stress, it shifts toward safer, defensive assets."
+   "description": "This algorithm uses bond trends as a macro risk signal. If bonds and liquidity look supportive, it allows more equity risk. If they signal stress or tightening, it rotates toward safer exposure."
  },
       {
         "title": "Strat 7: Emerging Markets Directional Trader (Tactical)",
@@ -69,7 +73,7 @@
         "cagr": "129.93%",
         "sharpe": "1.63",
         "maxDrawdown": "-66.24%",
-        "description": "This strategy trades emerging markets directionally using trend filters combined with short-term oversold and overbought signals. It is designed to capture violent EM rebounds and cyclical surges, accepting higher drawdowns in exchange for convex upside."
+        "description": "This is the more tactical EM model. It combines trend filters with short-term overbought/oversold signals to catch sharp EM swings. Upside can be strong, but so can drawdowns."
       },
       {
         "title": "Strat 8: Emerging Markets Trend Follower (Variant)",
@@ -78,7 +82,7 @@
         "cagr": "146.97%",
         "sharpe": "1.71",
         "maxDrawdown": "-72.24%",
-        "description": "This is a close variant of the EM directional strategy, with more emphasis on staying aligned with sustained EM trends and less on tactical timing. In practice, I intentionally run two similar EM models with slightly different indicators."
+        "description": "This is a second EM model that is less tactical and more trend-following. I run both on purpose with different signals so I can capture EM moves in different ways, even though they can struggle together in bad EM regimes."
       },
       {
         "title": "Strat 9: Rates Trend with Convex Hedge",
@@ -87,7 +91,7 @@
         "cagr": "206.86%",
         "sharpe": "2.65",
         "maxDrawdown": "-33.85%",
-        "description": "This strategy allocates between growth equities and bond duration based on trend and regime signals. It benefits from falling-rate environments and de-risks when rate trends reverse. It also applies defensive hedges when equity risk rises, providing cross-asset diversification."
+        "description": "This algo rotates between growth equities and bond duration depending on trend and regime signals. It tends to do best when rate cycles are clear and helps diversify away from pure equity behavior."
       },
       {
         "title": "Strat 10: Gold Trend with Blow-Off Reversal",
@@ -96,7 +100,7 @@
         "cagr": "21.43%",
         "sharpe": "0.70",
         "maxDrawdown": "-75.93%",
-        "description": "This strategy trades gold as a macro hedge and trend asset. It rides sustained trends in gold during inflationary or risk-off regimes and attempts contrarian positioning during parabolic moves. This is a convex satellite rather than a core return engine."
+        "description": "This is my gold trend/hedge model. It follows sustained gold trends and can take contrarian setups when moves get extreme. It is volatile, but recently it has helped a lot while equities have been choppy."
       }
     ]
   }

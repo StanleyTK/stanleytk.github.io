@@ -58,7 +58,7 @@ function Projects() {
                       )}
                     </div>
                   </td>
-                  <td className="py-2 px-4 text-sm" style={{ color: '#8892b0', borderBottom: '1px solid #233554' }}>
+                  <td className="py-2 px-4 text-base" style={{ color: '#8892b0', borderBottom: '1px solid #233554' }}>
                     {project.madeAt}
                   </td>
                   <td className="py-2 px-4" style={{ borderBottom: '1px solid #233554' }}>
@@ -78,7 +78,7 @@ function Projects() {
                       ))}
                     </div>
                   </td>
-                  <td className="py-2 px-4 text-sm" style={{ color: '#8892b0', borderBottom: '1px solid #233554' }}>
+                  <td className="py-2 px-4 text-base" style={{ color: '#8892b0', borderBottom: '1px solid #233554' }}>
                     {project.summary || ''}
                   </td>
                   <td className="py-2 px-4" style={{ borderBottom: '1px solid #233554' }}>
