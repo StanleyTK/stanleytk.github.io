@@ -1,12 +1,12 @@
 [
   {
     "year": "2026",
-    "title": "Algorithmic Trading Portfolio (Paper Trading)",
+    "title": "Algorithmic Portfolio Management",
     "madeAt": "Personal",
-    "builtWith": ["Python", "AWS Lambda", "Alpaca", "Pandas", "NumPy"],
+    "builtWith": ["Python", "AWS", "Alpaca"],
     "link": "/blog/daily-algorithmic-trading-portfolio",
     "github": null,
-    "summary": "A daily multi-strategy paper-trading system with 10 strategy modules, risk controls, and scheduled rebalancing at 3:50 PM ET.",
+    "summary": "A daily, serverless 10-strategy portfolio that delivers over 100% CAGR over 12+ years with a 3.58 Sharpe, ~50% lower max drawdown than SPY (-17% vs -34%).",
     "featured": true
   },
   {

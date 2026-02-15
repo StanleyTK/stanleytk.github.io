@@ -2,60 +2,109 @@
   {
     "id": 2,
     "year": "Feb 2026",
-    "title": "Daily Algorithmic Trading Portfolio: Architecture + Performance",
-    "description": "How I run a once-per-day paper-trading rebalance pipeline across 10 independent strategy modules and track risk metrics.",
+    "title": "Algorithmic Portfolio Management",
     "slug": "daily-algorithmic-trading-portfolio",
-    "intro": "This project is a daily algorithmic trading portfolio running on Alpaca paper trading. Instead of relying on one signal, I combine 10 independent strategy modules and rebalance once each trading day.",
-    "execution": "Execution is fully automated through AWS Lambda. At 3:50 PM ET, the system evaluates signals, applies risk constraints, computes target weights, and rebalances positions into the close.",
-    "alpacaLink": "https://app.alpaca.markets/paper/dashboard/overview",
+    "description": "A daily, serverless 10-strategy portfolio that delivers over 100% CAGR over 12+ years with a 3.58 Sharpe, ~50% lower max drawdown than SPY (-17% vs -34%).",
+    "statsReportPath": "/total_strategy.quantstats.html",
+    "intro": "Rule #1 of investing is: do not blow up. Many retail algo portfolios quietly fail because they concentrate almost entirely in high-beta tech or semiconductors and assume trends will persist. I made this mistake early on. The core idea here is to run multiple algorithms concurrently so performance is not dependent on one style. As you will see in the results, combining multiple low-correlation algorithms helps reduce drawdowns versus relying on any single model.",
+    "execution": "I built and iterated on this system over ~4 months. The entire pipeline runs serverlessly on AWS Lambda, with DynamoDB used for state, positions, and daily audit logs. Amazon SES emails me the exact trades and allocations at 3:50 PM ET before market close. I intentionally avoided EC2 because the pricing compared to Lambda functions is worse as it only runs once per day. Each of the 10 algorithms is fixed at a 10% portfolio weight, and the portfolio rotates daily based on each model’s signal. Individually, several algorithms have meaningfully larger drawdowns and lower Sharpe than the total combined portfolio. The combined system works because the algorithms are not too correlated and can survive the majority of market regimes together.",
+    "note": "Note: This algorithm is probably overfit. That said, the 12-year historical performance is strong, several of the underlying algorithms have strong community track records, and not all of the algorithms were developed by me. OOS starts in January 2026 and I have under 2 months of paper trading so far. I plan to post another update in a few months, and this stack has been live since February 17, 2026.",
     "strategyOverview": [
       {
-        "title": "Strategy 1: Regime-Aware Hedging",
-        "description": "Uses long-term market trend state plus short-term momentum extremes to switch between growth exposure, volatility hedges, and defensive cash-like instruments."
+        "title": "Strat 1: Equity Regime + Dip Buyer",
+        "backtestStart": "2 Mar, 2012",
+        "cagr": "50.42%",
+        "sharpe": "1.48",
+        "maxDrawdown": "-25.92%",
+        "description": "The goal of this algorithm is to capture rebounds. It spends most of its time in bonds or cash-like assets, but buys leveraged equity exposure during short-term drawdowns when the market regime is favorable. When markets become extended or risky, it shifts back to defensive positioning like bonds."
       },
       {
-        "title": "Strategy 2: High-Frequency Volatility Rotation",
-        "description": "Scales into volatility products during overbought risk conditions and rotates into inverse sector exposure when specific industries become statistically stretched."
+        "title": "Strat 2: Tech Beta with Defensive Fallback",
+        "backtestStart": "2 Mar, 2012",
+        "cagr": "176.59%",
+        "sharpe": "2.38",
+        "maxDrawdown": "-40.21%",
+        "description": "This strategy concentrates in technology and growth leadership when macro and trend conditions are supportive. When conditions worsens, it rotates into bonds or defensive assets. This sleeve captures long-duration tech bull markets while avoiding permanent exposure during regime breakdowns."
       },
       {
-        "title": "Strategy 3: Corner-Case Volatility Capture",
-        "description": "Targets extreme market states by rotating between different volatility leverage levels and only engaging dip-buy setups when long-term market structure is constructive."
+        "title": "Strat 3: Sector Momentum with Crash Overlay",
+        "modelName": "Four Corners",
+        "backtestStart": "5 Oct, 2011",
+        "cagr": "169.54%",
+        "sharpe": "2.47",
+        "maxDrawdown": "-36.99%",
+        "description": "This strategy rotates among equity sectors based on relative strength and momentum, aiming to hold the most favorable sectors. It layers in defensive or hedging logic when markets are bearish."
+      },
+ {
+   "title": "Strat 4: Volatility State Machine",
+   "modelName": "HWRT 3",
+   "backtestStart": "2 Mar, 2012",
+   "cagr": "193.82%",
+   "sharpe": "3.00",
+   "maxDrawdown": "-25.26%",
+   "description": "This is an active volatility trading engine, treating volatility as a regime that transitions between calm, building stress, and crisis states. In calm markets, it harvests carry or stays risk-on. As stress rises, it progressively rotates into convex volatility exposure and defensive assets. During crisis regimes, it prioritizes capital preservation."
+ },
+ {
+   "title": "Strat 5: Overbought Volatility Hedge Ladder",
+   "modelName": "Better KMLM",
+   "backtestStart": "5 Oct, 2011",
+   "cagr": "127.91%",
+   "sharpe": "1.71",
+   "maxDrawdown": "-52.93%",
+   "description": "This is a pure defensive overlay designed to provide systematic crash insurance. It does not attempt to trade volatility cycles for profit. Instead, it monitors equity overextension and progressively builds convex volatility hedges as markets become volatile."
+ },
+ {
+   "title": "Strat 6: Cross-Asset Trend Risk Switch",
+   "modelName": "Bonds Zoop V0.0",
+   "backtestStart": "5 Jan, 2011",
+   "cagr": "112.86%",
+   "sharpe": "1.95",
+   "maxDrawdown": "-37.42%",
+   "description": "This strategy uses bond trends as a signal for overall market risk. When bonds suggest markets are stable and liquidity is healthy, it allows more stock exposure. When bond trends point to tightening or rising stress, it shifts toward safer, defensive assets."
+ },
+      {
+        "title": "Strat 7: Emerging Markets Directional Trader (Tactical)",
+        "modelName": "EM Emerging Markets V0.4",
+        "backtestStart": "31 Dec, 2008",
+        "cagr": "129.93%",
+        "sharpe": "1.63",
+        "maxDrawdown": "-66.24%",
+        "description": "This strategy trades emerging markets directionally using trend filters combined with short-term oversold and overbought signals. It is designed to capture violent EM rebounds and cyclical surges, accepting higher drawdowns in exchange for convex upside."
       },
       {
-        "title": "Strategy 4: Trend + Relative-Strength Allocator",
-        "description": "Compares managed-futures versus technology leadership, then allocates to top/bottom ranked leveraged instruments based on short-term relative-strength momentum."
+        "title": "Strat 8: Emerging Markets Trend Follower (Variant)",
+        "modelName": "EM ftlt",
+        "backtestStart": "31 Dec, 2008",
+        "cagr": "146.97%",
+        "sharpe": "1.71",
+        "maxDrawdown": "-72.24%",
+        "description": "This is a close variant of the EM directional strategy, with more emphasis on staying aligned with sustained EM trends and less on tactical timing. In practice, I intentionally run two similar EM models with slightly different indicators."
       },
       {
-        "title": "Strategy 5: Emerging Markets Flight-to-Quality",
-        "description": "Trades emerging markets long/short exposure by combining oversold triggers with cross-asset bond-versus-equity risk signals."
+        "title": "Strat 9: Rates Trend with Convex Hedge",
+        "modelName": "QQQ FTLT Bonds V0.5",
+        "backtestStart": "2 Mar, 2012",
+        "cagr": "206.86%",
+        "sharpe": "2.65",
+        "maxDrawdown": "-33.85%",
+        "description": "This strategy allocates between growth equities and bond duration based on trend and regime signals. It benefits from falling-rate environments and de-risks when rate trends reverse. It also applies defensive hedges when equity risk rises, providing cross-asset diversification."
       },
       {
-        "title": "Strategy 6: QQQ Liquidity Rotation",
-        "description": "Runs overbought hedging checks across broad sectors, then rotates into defensive or offensive assets depending on volatility and bond-risk alignment."
-      },
-      {
-        "title": "Strategy 7: QQQ Trend-and-Mean-Reversion Hybrid",
-        "description": "Uses moving-average structure for trend direction, then overlays short-term mean reversion entries when long-term trend remains intact."
-      },
-      {
-        "title": "Strategy 8: Emerging Markets Versioned Model",
-        "description": "A versioned emerging-markets module that emphasizes confirmation from bond leadership and uses directional leverage accordingly."
-      },
-      {
-        "title": "Strategy 9: Treasury Momentum and Hedge",
-        "description": "Trades long-duration treasury directionally with optional volatility overlays, including inverse treasury exposure in sustained bond downtrends."
-      },
-      {
-        "title": "Strategy 10: Gold Trend Reversal Engine",
-        "description": "Combines multi-horizon moving-average trend filters with RSI reversal thresholds to switch between leveraged long-gold and inverse-gold exposure."
+        "title": "Strat 10: Gold Trend with Blow-Off Reversal",
+        "modelName": "Gold V0.0",
+        "backtestStart": "4 Dec, 2008",
+        "cagr": "21.43%",
+        "sharpe": "0.70",
+        "maxDrawdown": "-75.93%",
+        "description": "This strategy trades gold as a macro hedge and trend asset. It rides sustained trends in gold during inflationary or risk-off regimes and attempts contrarian positioning during parabolic moves. This is a convex satellite rather than a core return engine."
       }
     ]
-  },
-  {
-    "id": 1,
-    "year": "Jan 2026",
-    "title": "Starting My Blog Journey",
-    "description": "I want to start adding blogs for some projects that I will do in the future or add my previous positions or projects from now on.",
-    "slug": "starting-my-blog-journey"
   }
-]
+ ]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
